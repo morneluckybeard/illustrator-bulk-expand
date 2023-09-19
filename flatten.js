@@ -1,6 +1,7 @@
 // Define the paths for input (raw) and output (expanded) directories
-var rawDirPath = "C:/Users/MornéErasmus/Documents/Clients/fanblock/icons/raw";
-var expandedDirPath = "C:/Users/MornéErasmus/Documents/Clients/fanblock/icons/expanded";
+// absolute paths
+var rawDirPath = ""; 
+var expandedDirPath = "";
 
 // Open the raw directory
 var rawDir = new Folder(rawDirPath);
@@ -22,16 +23,9 @@ if (rawDir.exists) {
         
         // Select all objects in the document
         doc.selectObjectsOnActiveArtboard();
-
-         // Perform the "Object > Expand" operation
-        // app.executeMenuCommand("expandStyle");
-
         app.executeMenuCommand('Live Outline Object');
         app.executeMenuCommand('Live Outline Stroke');
-        app.executeMenuCommand('expandStyle'); // Expand Appearance
-        
-        // // Flatten the selected objects
-        // app.executeMenuCommand("Flatten");
+        app.executeMenuCommand('expandStyle'); 
         
         // Define the output file path in the expanded directory
         var expandedFilePath = expandedDirPath + "/" + rawFile.name;
